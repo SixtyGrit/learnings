@@ -11,7 +11,10 @@ function adjustStyle() {
     // now we should have it
     if (width < 600) {
         document.getElementById("myCSS").setAttribute("href", "_css/narrow.css");
-    } else {
+    } else if ((width >= 600) && (width < 1000)) {
+        document.getElementById("myCSS").setAttribute("href", "_css/mid_width.css");
+    }
+    else {
         document.getElementById("myCSS").setAttribute("href", "_css/main.css");
     }
 }
@@ -21,3 +24,7 @@ window.onresize = function () {
     adjustStyle();
 };
 
+// now call it when the window is loaded.
+window.onload = function () {
+    adjustStyle();
+};
